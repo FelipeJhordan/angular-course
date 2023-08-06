@@ -11,9 +11,29 @@ import { Component } from "@angular/core"
 
 })
 export class AppComponent {
-  name = "Luis"
+  name = "felipe jhordan"
+
+  images = [
+    "https://animefire.net/img/avatar/small_50.gif",
+    "https://animefire.net/img/avatar/small_50.gif",
+    "https://animefire.net/img/avatar/small_50.gif",
+    "https://animefire.net/img/avatar/small_50.gif"
+  ]
 
   imgUrl = "https://animefire.net/img/avatar/small_50.gif"
+  currentDate = new Date()
+
+  cost = 2000 
+
+  temperature = 25.3
+
+  pizza = {
+    toppings: ['pepperoni', 'bacon'],
+    size: 'large'
+  }
+
+  blueClass = false
+  fontSize = 32
 
 
   getName(): string {
