@@ -14,7 +14,6 @@ export class ModalService {
 
   ]
 
-  private visible = false
 
   constructor() { }
 
@@ -27,11 +26,21 @@ export class ModalService {
     console.log(this.modals)
   }
 
-  isModalVisible() {
-    return true
+  unregister(id: string) {
+    this.modals = this.modals.filter(
+      element => element.id !== id
+    )
   }
 
-  toggleModal() {
-    // this.visible = !this.visible
+  isModalVisible(id: string) : boolean {
+    return !!this.modals.find(element  => element.id == id)?.visible
+  }
+
+  toggleModal(id: string) {
+    const modal = this.modals.find(element => element.id === id)
+
+    if(modal) {
+        modal.visible = !modal.visible
+    }
   }
 }
