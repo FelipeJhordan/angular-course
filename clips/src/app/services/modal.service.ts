@@ -9,21 +9,15 @@ interface IModal {
   providedIn: 'root'
 })
 export class ModalService {
-
-  private modals: IModal[] = [
-
-  ]
-
+  private modals: IModal[] = []
 
   constructor() { }
 
   register(id: string) {
     this.modals.push({
       id,
-      visible: false,
+      visible: false
     })
-
-    console.log(this.modals)
   }
 
   unregister(id: string) {
@@ -32,15 +26,16 @@ export class ModalService {
     )
   }
 
-  isModalVisible(id: string) : boolean {
-    return !!this.modals.find(element  => element.id == id)?.visible
+  isModalOpen(id: string) : boolean {
+    return !!this.modals.find(element => element.id === id)?.visible
   }
 
   toggleModal(id: string) {
     const modal = this.modals.find(element => element.id === id)
 
     if(modal) {
-        modal.visible = !modal.visible
+      modal.visible = !modal.visible
     }
+    // this.visible = !this.visible
   }
 }
